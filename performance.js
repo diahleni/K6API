@@ -4,11 +4,11 @@ import {htmlReport} from "https://raw.githubusercontent.com/benc-uk/k6-reporter/
 const BASE_URL ='https://reqres.in';
 
 export const options = {
-	vus: 1000,
-	iterations: 3500,
+	vus: 1000, //number of virtual users
+	iterations: 3500, //number of iterations
 	thresholds: {
-		checks: ['rate > 0.9'],
-		http_req_duration: ['avg < 2000'], //Response API max 2s
+		checks: ['rate > 0.9'], //the rate of successful checks should be higher than 90%
+		http_req_duration: ['avg < 2000'], //API response time max 2s
 		http_req_failed: ['rate < 0.1'],
 	},
 };
