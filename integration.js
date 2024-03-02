@@ -29,6 +29,13 @@ export default function () {
 		check(res, {
 			'response name should same with request': (res) => {
 				const response = JSON.parse(res.body);
+				return response.name === name
+
+			},	
+		});
+		check(res, {
+			'response job should same with request': (res) => {
+				const response = JSON.parse(res.body);
 				return response.job === job
 
 			},	
@@ -60,10 +67,16 @@ export default function () {
 		check(res, {
 			'response name should same with request': (res) => {
 				const response = JSON.parse(res.body);
+				return response.name === name
+
+			},	
+		});
+		check(res, {
+			'response job should same with request': (res) => {
+				const response = JSON.parse(res.body);
 				return response.job === job
 
 			},	
 		});
-
 	});
 }
